@@ -175,4 +175,3 @@ instruction =
 
 instructions :: Parser UM
 instructions = UM <$> sepBy1 instruction (char ';')
-

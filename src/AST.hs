@@ -58,4 +58,3 @@ newtype UM = UM [UMInstruction]
 
 instance Show UM where
     show (UM instructions) = intercalate "\n" $ show <$> instructions
-

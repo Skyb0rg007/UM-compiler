@@ -26,6 +26,8 @@ import           System.Exit                              ( exitSuccess
 import           System.FilePath                          ( replaceExtensions
                                                           , splitExtensions
                                                           , takeExtensions
+import           System.Exit                              ( exitSuccess )
+import           System.FilePath                          ( replaceExtensions
                                                           , combine
                                                           )
 import           System.IO                                ( stderr
@@ -40,6 +42,10 @@ main :: IO ()
 main = do
     args <- getArgs
     when ("--help" `elem` args || "-h" `elem` args) $ usage >> exitSuccess
+main :: IO ()
+main = do
+    args <- getArgs
+    when ("--help" `elem` args || "-h" `elem` args) (usage >> exitSuccess)
     cwd    <- getCurrentDirectory
     inputs <- case args of
         [] -> getUMCFiles cwd
@@ -80,5 +86,3 @@ getUMCFiles path = do
                 .   map (combine path)
                 <$> listDirectory path
         _ -> return []
-
-

@@ -55,4 +55,3 @@ astToFile :: UM -> FilePath -> IO ()
 astToFile (UM ast) filename = do
     let bs = runPut $ mconcat $ putWord32be . astToWord <$> ast
     LBS.writeFile filename bs
-

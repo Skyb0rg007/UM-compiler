@@ -1,2 +1,8 @@
 dist/
 .*.swp
+.stack-work/
+um-compiler.cabal
+experiments/
+.*.swp
+*.idea
+*~
